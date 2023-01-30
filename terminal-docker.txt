@@ -1,0 +1,151 @@
+    1  container_name=lambda_docker
+    2  docker_image=aws_lambda_builder_image
+    3  docker run -td --name=$container_name $docker_image
+    4  docker cp ./requirements.txt $container_name:/
+    5  docker exec -i $container_name /bin/bash < ./docker_install.sh
+    6  docker cp $container_name:/python.zip python.zip
+    7  docker stop $container_name
+    8  docker rm $container_name
+    9  ./runner.sh
+   10  docker run --help
+   11  docker build . -t aws_lambda_builder_image
+   12  docker run -p aws_lambda_builder_image
+   13  docker run --help
+   14  docker run . aws_lambda_builder_image
+   15  docker run -p . aws_lambda_builder_image
+   16  sudo docker pull amazonlinux
+   17  sudo docker run -it amazonlinux:latest /bin/bash
+   18  # inside container
+   19  yum -y install python37 zip
+   20  python3 -m venv python
+   21  source python/bin/activate
+   22  pip3 install matplotlib
+   23  deactivate 
+   24  rm -rf python/{bin,include,lib64,pyvenv.cfg} python/lib/python3.7/site-packages/{__pycache__,easy_install.py,numpy*,pip*,pkg_resources,setuptools*}
+   25  zip -r aws_lambda_python37_layer_matplotlib.zip python/
+   26  # in other terminal, copy file from container to host
+   27  CONTAINER_ID=$(sudo docker ps|grep amazonlinux|cut -d " " -f1)
+   28  sudo docker cp ${CONTAINER_ID}:/aws_lambda_python37_layer_matplotlib.zip .
+   29  # exit container
+   30  exit
+   31  #!/bin/bash
+   32  # Download Hadoop binary distribution
+   33  wget https://downloads.apache.org/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz
+   34  # Extract the archive
+   35  tar -xzf hadoop-3.3.0.tar.gz
+   36  # Move the extracted folder to a convenient location
+   37  mv hadoop-3.3.0 /usr/local/hadoop
+   38  # Update ~/.bashrc to include Hadoop in the system's PATH
+   39  echo 'export HADOOP_HOME="/usr/local/hadoop"' >> ~/.bashrc
+   40  echo 'export PATH=$PATH:$HADOOP_HOME/bin' >> ~/.bashrc
+   41  # Apply changes to the current shell
+   42  source ~/.bashrc
+   43  # Verify the installation
+   44  hadoop version
+   45  docker
+   46  docker ps
+   47  docker container exec -it newGea /bin/bash
+   48  docker container exec -it newGea /bin/bash
+   49  docker container exec -it newGea /bin/sh
+   50  docker container exec -it newGea cmd
+   51  This should start a command prompt session in the running container. You can then use the hadoop command to check if Hadoop is installed in the container.
+   52  $ docker container exec -it newGea cmd
+   53  OCI runtime exec failed: exec failed: unable to start container process: exec: "cmd": executable file not found in $PATH: unknown
+   54  docker container exec -it newGea /bin/sh
+   55  docker container exec -it newGea powershell
+   56  docker container exec -it newGea /bin/sh
+   57  docker container exec -it newGea /bin/bash
+   58  docker PS
+   59  docker ps
+   60  docker container exec -it newGea /bin/sh
+   61  docker pull sequenceiq/hadoop-docker:2.7.1
+   62  docker run -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
+   63  docker run -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
+   64  docker run -it sequenceiq/hadoop-docker:2.7.1 bash
+   65  docker run -it sequenceiq/hadoop-docker:2.7.1 /bin/bash
+   66  FROM ubuntu:latest
+   67  docker --version
+   68  docker run -d -p 80:80 --name myserver nginx
+   69  docker run -d -p 80:80 --name NewGea_2 nginx
+   70  docker run -d -p 80:81 --name NewGea_2 nginx
+   71  docker run -d -p 80:80 --name NewGea_2 nginx
+   72  docker run -d -p 80:83 --name NewGea_3 nginx
+   73  docker run -d -p 80:80 --name myserver nginx
+   74  docker rm myserver
+   75  docker rm NewGea
+   76  docker rm NewGea_2
+   77  docker rm NewGea_3
+   78  docker run -d -p 80:80 --name newGea nginx
+   79  docker rm newGea
+   80  docker rm -f newGea
+   81  docker containers
+   82  docker run -d -p 80:80 --name newGea nginx
+   83  git git clone git@github.com:big-data-europe/docker-hadoop.git
+   84  git clone git@github.com:big-data-europe/docker-hadoop.git
+   85  git clone https://github.com/Leyber91/docker-hadoop.git
+   86  docker-compose up -d
+   87  ls
+   88  cd docker-hadoop/
+   89  docker-compose up -d
+   90  docker ps
+   91  docker exec -it namenode bash
+   92  cd ..
+   93  pwd
+   94  cd docker-hadoop/
+   95  docker container ls
+   96  ls
+   97  docker cp ../
+   98  ls
+   99  cd ..
+  100  ls
+  101  cd hadoop-mapreduce-examples-2.7.1-sources.jar 
+  102  cd docker-hadoop/
+  103  ls
+  104  docker container ls
+  105  docker cp ../hadoop-mapreduce-examples-2.7.1-sources.jar ad430b4d8fd6
+  106  docker cp ../hadoop-mapreduce-examples-2.7.1-sources.jar ad430b4d8fd6:/tmp
+  107  docker exec -it namenode bash
+  108  docker cp ../hadoop-mapreduce-examples-2.7.1-sources.jar ad430b4d8fd6:/tmp
+  109  docker exec -it namenode bash
+  110  docker exec -it namenode bash
+  111  ls
+  112  docker cp loremipsum.txt ad430b4d8fd6:/luis_blanco/data
+  113  docker exec -it namenode bash
+  114  docker exec -it namenode bash
+  115  docker cp loremipsum.txt ad430b4d8fd6:/
+  116  docker exec -it namenode bash
+  117  docker exec -it namenode bash
+  118  docker exec -it namenode bash
+  119  ls
+  120  hdfs dfs -get /user/luis_blanco/ luis_blanco
+  121  ls -l /usr/local/hadoop/libexec/hdfs-config.sh
+  122  chmod 755 /usr/local/hadoop/libexec/hdfs-config.sh
+  123  chmod 755 /usr/local/hadoop/libexec/hdfs-config.sh
+  124  hdfs dfs -get /user/luis_blanco/ luis_blanco
+  125  docker exec -it namenode bash
+  126  docker cp namenode:/luis_blanco/ ./
+  127  ls
+  128  ls -l
+  129  cd luis_blanco
+  130  ls
+  131  zip -r luis_blanco.zip luis_blanco
+  132  ls
+  133  cd ..
+  134  zip -r luis_blanco.zip luis_blanco
+  135  apt-get update && apt-get install zip
+  136  Compress-Archive
+  137  script -a terminal-hadoop.txt
+  138  history > terminal-commands.txt
+  139  touch terminal-docker.txt
+  140* touch terminal-hadoop.txtlsslsjcbsjkcqç
+  141  while read line; do   if [[ $line == *"docker exec -it namenode bash"* ]]; then
+    echo $line >> terminal-hadoop.txt;   else
+    echo $line >> terminal-docker.txt;   fi; done < "terminal-commands.txt"
+  142  ls
+  143  cat terminal-docker.txt 
+  144  cat terminal-hadoop.txt
+  145  cat terminal-commands.txt
+  146  docker exec -it namenode bash
+  147  ls terminal-commands.txt 
+  148  cat terminal-commands.txt 
+  149  history > terminal-docker.txt

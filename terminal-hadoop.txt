@@ -1,0 +1,10 @@
+91 docker exec -it namenode bash
+107 docker exec -it namenode bash
+109 docker exec -it namenode bash
+110 docker exec -it namenode bash
+113 docker exec -it namenode bash
+114 docker exec -it namenode bash
+116 docker exec -it namenode bash
+117 docker exec -it namenode bash
+118 docker exec -it namenode bash
+125 docker exec -it namenode bash
